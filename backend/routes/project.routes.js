@@ -5,7 +5,8 @@ import upload from '../middlewares/upload.middleware.js';
 const router  = express.Router();
 
 router.post('/',upload,createProject);
-router.route('/:id').get(getProject).patch(updateProject);
+router.route('/:id').get(getProject)
+router.patch('/:id',upload,updateProject);
 router.get('/',getProjects);
 
 export default router;
